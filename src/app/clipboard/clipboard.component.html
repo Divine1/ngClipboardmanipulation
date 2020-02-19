@@ -1,0 +1,18 @@
+<div class="clipboard">
+    <form (ngSubmit)="onFormSubmit(form)" #form="ngForm">
+        <input type="text" id="textbox" name="textbox" ngModel />
+
+        <input type="file" 
+        id="imageupload" 
+        (change)="onuploadfileEvent($event)"
+        name="imageupload[]" ngModel  multiple/>
+        <button>Upload</button>
+    </form>
+    <button (click)="showFiles()">ShowFiles</button>
+    <div>
+        <div *ngFor="let data of fileuploadArray">
+            {{data.name}}
+        </div>
+    </div>
+    <button (click)="submitJSONData()">submitJSONData</button>
+</div>
